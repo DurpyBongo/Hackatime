@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Link to our CSS file -->
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   
@@ -20,10 +19,11 @@
     overflow: hidden;
     font-family: 'Quicksand', sans-serif;
     color: #f4f6f4;
+    transition: background-image 1s ease-in-out; /* Smoothly crossfade backgrounds! */
   ">
 
-    <!-- 1. THE COZY TOP BAR -->
-    <div style="
+    <!-- 1. THE TOP BAR -->
+    <div id="topBar" style="
       position: absolute;
       top: 0;
       left: 0;
@@ -39,57 +39,65 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       z-index: 1000;
     ">
-      <!-- Clickable OS name to reopen the window -->
-      <span id="openBtn" style="font-family: 'Lora', serif; font-weight: 700; font-style: italic; color: #d4e3d4; font-size: 1.1rem; cursor: pointer; user-select: none;">ethanOS</span>
-      <span style="font-size: 0.85rem; letter-spacing: 1px; color: #a3b899; font-weight: 600; user-select: none;">🍃 IN THE WOODS</span>
-      <span id="timeElement" style="font-weight: 700; color: #f4f6f4; user-select: none;">Loading Time...</span>
+      <span id="openWelcomeBtn" style="font-family: 'Lora', serif; font-weight: 700; font-style: italic; color: #d4e3d4; font-size: 1.1rem; cursor: pointer; user-select: none;">ethanOS</span>
+      <span id="themeBadge" style="font-size: 0.85rem; letter-spacing: 1px; color: #a3b899; font-weight: 600; user-select: none; cursor: pointer;" title="Click to change scenery">🍃 CYCLING SCENERY</span>
+      <span id="timeElement" style="font-weight: 700; color: #f4f6f4; user-select: none;">Loading...</span>
     </div>
 
-    <!-- 2. THE APPLICATION WINDOW -->
-    <!-- Positioned dynamically using style so it floats perfectly in the center on startup -->
-    <div id="welcomeWindow" class="window" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <!-- 2. DESKTOP SHORTCUTS BAR -->
+    <div class="desktop-apps">
+      <!-- Shortcut to launch welcome screen -->
+      <div id="openWelcomeBtn" class="app-icon">
+        <div class="app-icon-symbol">🐱</div>
+        <div class="app-icon-label">Bongo Log</div>
+      </div>
       
-      <!-- The Window Header (The Handle for Dragging) -->
+      <!-- Shortcut to launch forest task planner -->
+      <div id="openPlannerBtn" class="app-icon">
+        <div class="app-icon-symbol">🌿</div>
+        <div class="app-icon-label">Tasks</div>
+      </div>
+    </div>
+
+    <!-- 3. WINDOW 1: WELCOME WINDOW -->
+    <div id="welcomeWindow" class="window" style="top: 45%; left: 35%; transform: translate(-50%, -50%);">
       <div id="welcomeWindowHeader" class="windowheader">
-        <button id="closeBtn" class="closebutton" title="Close Window"></button>
+        <button id="closeWelcomeBtn" class="closebutton"></button>
         <span style="font-family: 'Lora', serif; font-weight: 600; font-size: 0.9rem; color: #a3b899;">system_info.sh</span>
-        <span style="width: 14px;"></span> <!-- Spacer to balance out close button -->
+        <span style="width: 14px;"></span>
       </div>
 
-      <!-- Bongo Cat Profile Picture -->
-      <img style="
-        width: 110px; 
-        height: 110px; 
-        border-radius: 50%; 
-        object-fit: cover; 
-        border: 3px solid #a3b899; 
-        margin-bottom: 15px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      " src="./BongoCat.jpg" alt="Bongo Cat" />
-
-      <h1 style="font-family: 'Lora', serif; margin: 0 0 12px 0; font-size: 1.8rem; color: #e1ebd5; font-weight: 600;">
-        @DurpyBongo
-      </h1>
-      
-      <p style="font-size: 0.9rem; line-height: 1.6; color: #c9d3c4; margin-bottom: 25px; font-weight: 400;">
-        Welcome to my quiet corner of the web. Grab the top bar of this window to drag me around your screen!
+      <img style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 3px solid #a3b899; margin-bottom: 15px;" src="./BongoCat.jpg" alt="Bongo Cat" />
+      <h1 style="font-family: 'Lora', serif; margin: 0 0 12px 0; font-size: 1.6rem; color: #e1ebd5;">@DurpyBongo</h1>
+      <p style="font-size: 0.85rem; line-height: 1.6; color: #c9d3c4; margin-bottom: 25px;">
+        Welcome to my custom nature dashboard. Launch apps using the icons on the left.
       </p>
-
-      <a style="
-        display: inline-block; 
-        background-color: #a3b899; 
-        color: #1e2d24; 
-        padding: 10px 24px; 
-        text-decoration: none; 
-        border-radius: 30px; 
-        font-weight: 700;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(163, 184, 153, 0.2);
-      " href="https://github.com/DurpyBongo" target="_blank">Explore GitHub →</a>
+      <a style="display: inline-block; background-color: #a3b899; color: #1e2d24; padding: 10px 24px; text-decoration: none; border-radius: 30px; font-weight: 700; font-size: 0.85rem;" href="https://github.com/DurpyBongo" target="_blank">Explore GitHub →</a>
     </div>
 
-    <!-- Link to our JavaScript logic file -->
-    <script src="script.js"></script>
+    <!-- 4. WINDOW 2: FOREST TASK PLANNER APP (Hidden by default using display: none) -->
+    <div id="plannerWindow" class="window" style="top: 55%; left: 65%; transform: translate(-50%, -50%); display: none;">
+      <div id="plannerWindowHeader" class="windowheader">
+        <button id="closePlannerBtn" class="closebutton"></button>
+        <span style="font-family: 'Lora', serif; font-weight: 600; font-size: 0.9rem; color: #a3b899;">forest_tracker.sh</span>
+        <span style="width: 14px;"></span>
+      </div>
+
+      <div class="task-container">
+        <h2 style="font-family: 'Lora', serif; margin: 0 0 15px 0; font-size: 1.4rem; color: #e1ebd5; text-align: center;">Task Tracker</h2>
+        
+        <div class="task-form">
+          <input type="text" id="taskInput" class="task-input" placeholder="What's your quest today?">
+          <input type="datetime-local" id="taskDate" class="task-date">
+          <button id="addTaskBtn" class="task-btn">Add Quest</button>
+        </div>
+
+        <ul id="taskList" class="task-list">
+          <!-- Tasks automatically generate here -->
+        </ul>
+      </div>
+    </div>
+
+    <script defer src="script.js"></script>
   </body>
 </html>
