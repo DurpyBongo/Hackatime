@@ -1,0 +1,51 @@
+/* --- THE WINDOW --- */
+.window {
+  position: absolute;
+  width: 90%;
+  max-width: 480px;
+  background-color: rgba(34, 49, 43, 0.75); /* Cozy moss glass */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(163, 184, 153, 0.25);
+  border-radius: 20px;
+  padding: 20px 30px 40px 30px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(18, 30, 25, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+/* --- THE WINDOW DRAG HANDLE (HEADER) --- */
+.windowheader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(163, 184, 153, 0.15);
+  margin-bottom: 20px;
+  cursor: grab; /* Shows a hand grab cursor */
+  user-select: none; /* Prevents text highlighting while dragging */
+}
+
+.windowheader:active {
+  cursor: grabbing; /* Shows a closed fist while holding */
+}
+
+/* --- THE COZY CLOSE BUTTON --- */
+.closebutton {
+  width: 14px;
+  height: 14px;
+  background-color: #e57373; /* Soft red */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: none;
+}
+
+.closebutton:hover {
+  transform: scale(1.15);
+  background-color: #ef5350;
+}
