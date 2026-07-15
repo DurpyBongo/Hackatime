@@ -1,33 +1,109 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Personal OS</title>
+    <title>ethanOS | Cozy Workspace</title>
+    <!-- Google Fonts: Lora (serif headers) & Quicksand (soft rounded UI text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
   
-  <!-- This single body tag now contains your awesome dark-mode styles! -->
-  <body style="background-color: #0f172a; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding-top: 100px; padding-bottom: 50px;">
+  <!-- Cozy nature background with a soft, warm overlay -->
+  <body style="
+    background-image: linear-gradient(rgba(46, 74, 63, 0.15), rgba(46, 74, 63, 0.15)), url('https://images.unsplash.com/photo-1511497584788-876760111969?w=1200');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Quicksand', sans-serif;
+    color: #f4f6f4;
+  ">
 
-    <!-- 1. The Big Title -->
-    <h1>ethanOS</h1>
+    <!-- 1. THE COZY TOP BAR -->
+    <div style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      background-color: rgba(34, 49, 43, 0.5); /* Semi-transparent warm moss green */
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1000;
+    ">
+      <span style="font-family: 'Lora', serif; font-weight: 700; font-style: italic; color: #d4e3d4; font-size: 1.1rem;">ethanOS</span>
+      <span style="font-size: 0.85rem; letter-spacing: 1px; color: #a3b899; font-weight: 600;">🍃 IN THE WOODS</span>
+      <span id="timeElement" style="font-weight: 700; color: #f4f6f4;">Loading Time...</span>
+    </div>
 
-    <!-- 2. A Subtitle -->
-    <h2>System Status: Active</h2>
+    <!-- 2. THE WINDOW (Extra rounded corners, softer shadows, warm forest theme) -->
+    <div style="
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 480px;
+      background-color: rgba(34, 49, 43, 0.75); /* Warm dark green glass */
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(163, 184, 153, 0.25);
+      border-radius: 20px; /* Super soft, rounded edges */
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(18, 30, 25, 0.4);
+    ">
+      <!-- Profile Pic: Cozy Cabin/Nature Vibe -->
+      <img style="
+        width: 110px; 
+        height: 110px; 
+        border-radius: 50%; 
+        object-fit: cover; 
+        border: 3px solid #a3b899; 
+        margin-bottom: 24px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      " src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=500" alt="OS Profile Pic" />
 
-    <!-- 3. Your Profile / Vibe Image -->
-    <!-- Added the circle & neon border styling here so it looks like a clean OS widget! -->
-    <img style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #38bdf8; margin: 20px 0;" 
-         src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500" 
-         alt="OS Profile Pic" />
+      <!-- Lora header font -->
+      <h1 style="font-family: 'Lora', serif; margin: 0 0 12px 0; font-size: 2rem; color: #e1ebd5; font-weight: 600;">
+        Welcome to the Cabin
+      </h1>
+      
+      <p style="font-size: 0.95rem; line-height: 1.7; color: #c9d3c4; margin-bottom: 30px; font-weight: 400;">
+        Take a breath. This is your quiet corner of the web, running smoothly on a lightweight, custom-styled environment.
+      </p>
 
-    <!-- 4. A Short Intro Paragraph -->
-    <p style="max-width: 600px; margin: 0 auto; line-height: 1.6; color: #cbd5e1;">
-      Welcome to my personal operating system. Right now, it's a minimal layout built in VS Code, but we're transforming it into a full digital workspace.
-    </p>
+      <!-- Soft Green Link Button -->
+      <a style="
+        display: inline-block; 
+        background-color: #a3b899; 
+        color: #1e2d24; 
+        padding: 12px 28px; 
+        text-decoration: none; 
+        border-radius: 30px; /* Pillow-soft button shape */
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(163, 184, 153, 0.2);
+      " href="https://github.com/">Explore GitHub →</a>
+    </div>
 
-    <!-- 5. A Functional Launch Button -->
-    <!-- Added the button styles so it looks like a real clickable interface button -->
-    <a style="display: inline-block; background-color: #38bdf8; color: #0f172a; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 25px; box-shadow: 0 4px 14px rgba(56, 189, 248, 0.4);" 
-       href="https://github.com/">Launch Terminal (GitHub) →</a>
+    <!-- 3. TIME LOGIC -->
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        document.getElementById('timeElement').innerText = timeString;
+      }
+      updateTime();
+      setInterval(updateTime, 1000);
+    </script>
 
   </body>
 </html>
