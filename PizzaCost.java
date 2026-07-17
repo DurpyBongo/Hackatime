@@ -1,3 +1,10 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Calculates the total cost of making a pizza based on the input diameter 
+ *              by combining constant labor and rent fees with material costs.
+ */
+
 import java.util.Scanner; // import the scanner toolbox
 
 public class PizzaCost {

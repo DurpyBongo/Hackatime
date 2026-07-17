@@ -1,3 +1,10 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Calculates the total days a user has been alive and the total hours they 
+ *              have spent sleeping (assuming 8 hours/day) using simplified calendar math.
+ */
+
 import java.util.Scanner; // import the scanner toolbox
 
 public class Sleep {

@@ -1,3 +1,10 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Prompts the user for a three-digit integer and extracts the individual 
+ *              hundreds, tens, and ones place digits using mathematical division and modulus.
+ */
+
 import java.util.Scanner; // import the scanner toolbox
 
 public class Digits {

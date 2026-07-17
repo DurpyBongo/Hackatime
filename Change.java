@@ -1,3 +1,10 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Prompts the user for an amount of change in cents and calculates 
+ *              the minimum number of quarters, dimes, nickels, and pennies needed.
+ */
+
 import java.util.Scanner; // import the scanner toolbox
 
 public class Change {

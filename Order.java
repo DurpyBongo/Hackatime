@@ -1,3 +1,10 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Simulates a fast-food checkout by taking order quantities, calculating 
+ *              the subtotal, adding sales tax, and computing the change due based on cash tendered.
+ */
+
 import java.util.Scanner;
 
 public class Order {

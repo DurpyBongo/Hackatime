@@ -1,3 +1,10 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Reads two integers from the user and outputs the results of both 
+ *              integer division and modulus operations in both order combinations.
+ */
+
 import java.util.Scanner; // import the scanner toolbox
 
 public class DivandMod {

@@ -1,3 +1,9 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Computes the remaining height of an object dropped from 100 meters 
+ *              after a user-specified elapsed time, rounded to one decimal place.
+ */
 
 import java.util.Scanner; // import the scanner toolbox
 

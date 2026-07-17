@@ -1,3 +1,11 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Calculates the energy produced from a given mass using E=mc^2 and 
+ *              determines the equivalent number of 100-watt light bulbs powered, 
+ *              formatting the output in scientific notation.
+ */
+
 import java.util.Scanner; // import the scanner toolbox
 
 public class Energy {

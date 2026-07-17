@@ -1,3 +1,10 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Calculates a student's net annual college expenses by subtracting 
+ *              scholarships/grants from the sum of tuition, rent, and book costs.
+ */
+
 import java.util.Scanner;
 
 public class CollegeCalculator {
