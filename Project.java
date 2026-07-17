@@ -1,3 +1,10 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Prompts the user for the minutes spent on four project tasks and prints 
+ *              a structured table displaying the percentage of total time spent on each task.
+ */
+
 import java.util.Scanner; // import the scanner toolbox
 
 public class Project {
@@ -31,10 +38,10 @@ public class Project {
         // Display the table of results
         System.out.println();
         System.out.println("Task            % Time");
-        System.out.format("Designing       %.2f %% %n", percentDesigning);
-        System.out.format("Coding          %.2f %% %n", percentCoding);
-        System.out.format("Debugging       %.2f %% %n", percentDebugging);
-        System.out.format("Testing         %.2f %% %n", percentTesting);
+        System.out.format("Designing       %.2f%%%n", percentDesigning);
+        System.out.format("Coding          %.2f%%%n", percentCoding);
+        System.out.format("Debugging       %.2f%%%n", percentDebugging);
+        System.out.format("Testing         %.2f%%%n", percentTesting);
         
         scanner.close();
     }

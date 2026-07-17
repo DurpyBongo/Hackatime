@@ -1,3 +1,10 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Prompts the user for their monthly expenditures across four categories, 
+ *              calculates the total spending, and displays the percentage spent on each category in a table.
+ */
+
 import java.util.Scanner; // import the scanner toolbox
 
 public class Spending {
@@ -31,10 +38,10 @@ public class Spending {
         // Display the formatted table of results
         System.out.println();
         System.out.println("Category        Budget");
-        System.out.format("Food            %.2f%% %n", percentFood);
-        System.out.format("Clothing        %.2f%% %n", percentClothing);
-        System.out.format("Entertainment   %.2f%% %n", percentEntertainment);
-        System.out.format("Rent            %.2f%% %n", percentRent);
+        System.out.format("Food            %.2f%%%n", percentFood);
+        System.out.format("Clothing        %.2f%%%n", percentClothing);
+        System.out.format("Entertainment   %.2f%%%n", percentEntertainment);
+        System.out.format("Rent            %.2f%%%n", percentRent);
         
         scanner.close();
     }
