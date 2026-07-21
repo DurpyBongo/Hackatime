@@ -1,3 +1,10 @@
+/**
+ * Name: Ethan Zhu
+ * Date: July 16, 2026
+ * Description: Converts a user-specified total number of minutes into hours and minutes, 
+ *              using a division math trick to ensure minutes display with two digits without if-statements.
+ */
+
 import java.util.Scanner; // import the scanner toolbox
 
 public class TimeConversion {

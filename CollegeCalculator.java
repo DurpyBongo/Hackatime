@@ -37,7 +37,7 @@ public class CollegeCalculator {
         totalNeeded = (tuition + residence + books) - scholarships;
         
         // Display result
-        System.out.format("%nTotal money needed for your school year is: $%.2f", totalNeeded);
+        System.out.format("%nTotal money needed for your school year is: $%.2f%n", totalNeeded);
         
         scanner.close();
     }
